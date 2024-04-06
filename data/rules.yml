@@ -2,12 +2,12 @@ version: "3.1"
 
 rules:
 
-- rule: Say goodbye anytime the user says goodbye
+- rule: Dire au revoir à chaque fois que l'utilisateur dit au revoir
   steps:
-  - intent: goodbye
-  - action: utter_goodbye
+    - intent: au_revoir
+    - action: utter_au_revoir
 
-- rule: Say 'I am a bot' anytime the user challenges
+- rule: Dire 'Je suis un robot' chaque fois que l'utilisateur met au défi
   steps:
-  - intent: bot_challenge
-  - action: utter_iamabot
+    - intent: defi_bot
+    - action: utter_iamabot

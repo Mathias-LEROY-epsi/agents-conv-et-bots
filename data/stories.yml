@@ -4,27 +4,32 @@ stories:
 
 - story: happy path
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
+    - intent: salutation
+    - action: utter_salutation
+    - intent: bonne_humeur
+    - action: utter_content
 
 - story: sad path 1
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_happy
+    - intent: salutation
+    - action: utter_salutation
+    - intent: mauvaise_humeur
+    - action: utter_reconfort
+    - action: utter_est_ce_que_cela_aide
+    - intent: confirmer
+    - action: utter_content
 
 - story: sad path 2
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: deny
-  - action: utter_goodbye
+    - intent: salutation
+    - action: utter_salutation
+    - intent: mauvaise_humeur
+    - action: utter_reconfort
+    - action: utter_est_ce_que_cela_aide
+    - intent: nier
+    - action: utter_au_revoir
+
+- story: tell the weather
+  steps:
+    - intent: question_meteo
+    - action: utter_meteo
