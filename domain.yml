@@ -4,28 +4,52 @@ intents:
   - salutation
   - au_revoir
   - confirmer
-  - nier
-  - bonne_humeur
-  - mauvaise_humeur
-  - defi_bot
-  - question_meteo
+  - demande_reservation
+  - selection_ville
+  - selection_date
+  - selection_nuits
+
+entities:
+  - date
+  - ville
+  - nuits
+
+slots:
+  slot_date:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: date
+  slot_nuits:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: nuits
+      - type: from_text
+  slot_ville:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: ville
 
 responses:
   utter_salutation:
-    - text: "Salut ! Comment vas-tu ?"
-  utter_reconfort:
-    - text: "Voici quelque chose pour te remonter le moral :"
-      image: "https://i.imgur.com/nGF1K8f.jpg"
-  utter_est_ce_que_cela_aide:
-    - text: "Est-ce que cela t'a aidé ?"
-  utter_content:
-    - text: "Super, continue comme ça !"
+    - text: "Bonjour, que puis-je faire pour vous ?"
+    - text: "Bonjour, comment puis-je vous aider ?"
   utter_au_revoir:
     - text: "Au revoir"
-  utter_iamabot:
-    - text: "Je suis un bot, alimenté par Rasa."
-  utter_meteo:
-    - text: "Il fait beau aujourd'hui !"
+
+  utter_choix_de_la_ville:
+    - text: "À quel hôtel souhaitez vous résider ?"
+  utter_date_de_reservation:
+    - text: "À quelle date souhaitez-vous réserver votre chambre d'hôtel ? (donnez la date sous la forme DD/MM/YY)"
+  utter_nombre_de_nuits:
+    - text: "Vous souhaitez réserver combien de nuits ?"
+
+  utter_confirmation_reservation:
+    - text: "Très bien. Vous souhaitez réserver une chambre dans l'hôtel de {slot_ville}, pour {slot_nuits}, le {slot_date}. Est-ce correct ?"
+  utter_enregistrement_reservation:
+    - text: "Votre réservation a bien été enregistrée. Merci !"
 
 session_config:
   session_expiration_time: 60

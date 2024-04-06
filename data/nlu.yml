@@ -1,91 +1,77 @@
 version: "3.1"
 
 nlu:
-- intent: salutation
-  examples: |
-    - salut
-    - bonjour
-    - coucou
-    - bonjour toi
-    - bonjour
-    - bonsoir
-    - moin
-    - salut toi
-    - allons-y
-    - salut mec
-    - bonjour
-    - bonsoir
-    - bon après-midi
+  - intent: salutation
+    examples: |
+      - salut
+      - bonjour
+      - coucou
+      - bonsoir
+      - bon après-midi
 
-- intent: au_revoir
-  examples: |
-    - à plus
-    - au revoir
-    - à plus tard
-    - bonne nuit
-    - salut
-    - au revoir
-    - bonne journée
-    - à la prochaine
-    - au revoir
-    - à plus tard
+  - intent: au_revoir
+    examples: |
+      - à plus
+      - au revoir
+      - à plus tard
+      - bonne nuit
+      - bonne journée
+      - à la prochaine
 
-- intent: confirmer
-  examples: |
-    - oui
-    - en effet
-    - bien sûr
-    - ça semble bien
-    - correct
+  - intent: confirmer
+    examples: |
+      - oui
+      - oui, c'est cela
+      - en effet
+      - bien sûr
+      - ça semble bien
+      - correct
 
-- intent: nier
-  examples: |
-    - non
-    - jamais
-    - je ne pense pas
-    - je n'aime pas ça
-    - pas possible
-    - pas vraiment
+  - intent: demande_reservation
+    examples: |
+      - Je souhaite réserver une chambre d'hôtel
+      - J'aimerais faire une réservation
+      - Pouvez-vous m'aider à réserver une chambre ?
 
-- intent: bonne_humeur
-  examples: |
-    - parfait
-    - super
-    - incroyable
-    - je me sens comme un roi
-    - merveilleux
-    - je me sens très bien
-    - je vais bien
-    - je suis incroyable
-    - je vais sauver le monde
-    - super excité
-    - extrêmement bien
-    - si parfait
-    - si bon
+  - intent: selection_ville
+    examples: |
+      - [Nantes](ville)
+      - Je vais séjourner à [Lyon](ville)
+      - Je serai à [Paris](ville) ce jour là
 
-- intent: mauvaise_humeur
-  examples: |
-    - ma journée était horrible
-    - je suis triste
-    - je ne me sens pas très bien
-    - je suis déçu
-    - super triste
-    - je suis tellement triste
-    - triste
-    - très triste
-    - malheureux
-    - pas bien
-    - pas très bien
-    - extrêmement triste
-    - si triste
+  - intent: selection_nuits
+    examples: |
+      - [5 nuits](nuits)
+      - je compte rester [2 nuits](nuits)
+      - [3 nuits](nuits)
 
-- intent: defi_bot
-  examples: |
-    - es-tu un robot ?
-    - es-tu un humain ?
-    - est-ce que je parle à un robot ?
-    - est-ce que je parle à un humain ?
+  - intent: selection_date
+    examples: |
+      - le [01/02](date)
+      - [17/04/24](date)
 
-- intent: question_meteo
-  examples: |
-    - quel temps fait-il aujourd'hui ?
+  - lookup: ville
+    examples: |
+      - Paris
+      - Lyon
+      - Nantes
+      - Marseille
+      - Bordeaux
+      - Lille
+      - Toulouse
+
+  - lookup: nuits
+    examples: |
+      - une nuit
+      - deux nuits
+      - trois nuits
+      - 5 nuits
+      - Je vais rester 3 nuits
+      - Juste cette nuit
+
+  - lookup: date
+    examples: |
+      - le 17/12/2024
+      - 17/04/24
+      - 03/02
+      - à partir du 1/03

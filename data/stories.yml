@@ -2,34 +2,13 @@ version: "3.1"
 
 stories:
 
-- story: happy path
+- story: Greet and make reservation
   steps:
-    - intent: salutation
-    - action: utter_salutation
-    - intent: bonne_humeur
-    - action: utter_content
-
-- story: sad path 1
-  steps:
-    - intent: salutation
-    - action: utter_salutation
-    - intent: mauvaise_humeur
-    - action: utter_reconfort
-    - action: utter_est_ce_que_cela_aide
-    - intent: confirmer
-    - action: utter_content
-
-- story: sad path 2
-  steps:
-    - intent: salutation
-    - action: utter_salutation
-    - intent: mauvaise_humeur
-    - action: utter_reconfort
-    - action: utter_est_ce_que_cela_aide
-    - intent: nier
-    - action: utter_au_revoir
-
-- story: tell the weather
-  steps:
-    - intent: question_meteo
-    - action: utter_meteo
+    - intent: demande_reservation
+    - action: utter_choix_de_la_ville
+    - intent: selection_ville
+    - action: utter_date_de_reservation
+    - intent: selection_date
+    - action: utter_nombre_de_nuits
+    - intent: selection_nuits
+    - action: utter_confirmation_reservation
