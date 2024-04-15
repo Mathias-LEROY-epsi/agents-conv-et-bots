@@ -2,13 +2,32 @@ version: "3.1"
 
 stories:
 
-- story: Greet and make reservation
-  steps:
-    - intent: demande_reservation
-    - action: utter_choix_de_la_ville
-    - intent: selection_ville
-    - action: utter_date_de_reservation
-    - intent: selection_date
-    - action: utter_nombre_de_nuits
-    - intent: selection_nuits
-    - action: utter_confirmation_reservation
+  - story: Nouvelle réservation
+    steps:
+      - intent: demande_reservation
+      - action: action_nouvelle_reservation
+
+  - story: Annuler réservation
+    steps:
+      - intent: annuler_reservation
+      - action: action_annuler_reservation
+
+  - story: Info réservation
+    steps:
+      - intent: details_reservation
+      - action: action_informations_reservation
+
+  - story: Menu du jour
+    steps:
+      - intent: menu_du_jour
+      - action: action_menu_du_jour
+
+  - story: Liste des allergènes
+    steps:
+      - intent: liste_allergenes
+      - action: action_liste_allergenes
+
+  - story: Lien vers la carte
+    steps:
+      - intent: lien_vers_carte
+      - action: action_lien_vers_la_carte

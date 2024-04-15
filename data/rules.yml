@@ -11,6 +11,7 @@ rules:
     steps:
       - intent: salutation
       - action: utter_salutation
+      - action: utter_liste_choix
 
   - rule: utter_confirm_reservation est correct -> on enregistre la réservation
     steps:

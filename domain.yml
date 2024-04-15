@@ -5,32 +5,11 @@ intents:
   - au_revoir
   - confirmer
   - demande_reservation
-  - selection_ville
-  - selection_date
-  - selection_nuits
-
-entities:
-  - date
-  - ville
-  - nuits
-
-slots:
-  slot_date:
-    type: text
-    mappings:
-      - type: from_entity
-        entity: date
-  slot_nuits:
-    type: text
-    mappings:
-      - type: from_entity
-        entity: nuits
-      - type: from_text
-  slot_ville:
-    type: text
-    mappings:
-      - type: from_entity
-        entity: ville
+  - annuler_reservation
+  - details_reservation
+  - menu_du_jour
+  - liste_allergenes
+  - lien_vers_carte
 
 responses:
   utter_salutation:
@@ -38,18 +17,21 @@ responses:
     - text: "Bonjour, comment puis-je vous aider ?"
   utter_au_revoir:
     - text: "Au revoir"
-
-  utter_choix_de_la_ville:
-    - text: "À quel hôtel souhaitez vous résider ?"
-  utter_date_de_reservation:
-    - text: "À quelle date souhaitez-vous réserver votre chambre d'hôtel ? (donnez la date sous la forme DD/MM/YY)"
-  utter_nombre_de_nuits:
-    - text: "Vous souhaitez réserver combien de nuits ?"
+  utter_liste_choix:
+    - text: "Veuillez sélectionner un des choix suivants :\n- Nouvelle réservation\n- Annuler réservation\n- Informations sur une réservation\n- Menu du jour\n- Liste des allergènes\n- Lien vers la carte"
 
   utter_confirmation_reservation:
     - text: "Très bien. Vous souhaitez réserver une chambre dans l'hôtel de {slot_ville}, pour {slot_nuits}, le {slot_date}. Est-ce correct ?"
   utter_enregistrement_reservation:
     - text: "Votre réservation a bien été enregistrée. Merci !"
+
+actions:
+  - action_nouvelle_reservation
+  - action_annuler_reservation
+  - action_informations_reservation
+  - action_menu_du_jour
+  - action_liste_allergenes
+  - action_lien_vers_la_carte
 
 session_config:
   session_expiration_time: 60

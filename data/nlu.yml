@@ -29,49 +29,31 @@ nlu:
 
   - intent: demande_reservation
     examples: |
-      - Je souhaite réserver une chambre d'hôtel
       - J'aimerais faire une réservation
-      - Pouvez-vous m'aider à réserver une chambre ?
+      - Je souhaite réserver une table
 
-  - intent: selection_ville
+  - intent: annuler_reservation
     examples: |
-      - [Nantes](ville)
-      - Je vais séjourner à [Lyon](ville)
-      - Je serai à [Paris](ville) ce jour là
+      - J'aimerais annuler une réservation
+      - Je veux annuler
 
-  - intent: selection_nuits
+  - intent: details_reservation
     examples: |
-      - [5 nuits](nuits)
-      - je compte rester [2 nuits](nuits)
-      - [3 nuits](nuits)
+      - J'aimerais avoir le détail d'une réservation
+      - Comment fait-on pour voir les informations d'une réservation
 
-  - intent: selection_date
+  - intent: menu_du_jour
     examples: |
-      - le [01/02](date)
-      - [17/04/24](date)
+      - Pouvez-vous me donner le menu du jour
+      - Où peut-on voir le menu ?
 
-  - lookup: ville
+  - intent: liste_allergenes
     examples: |
-      - Paris
-      - Lyon
-      - Nantes
-      - Marseille
-      - Bordeaux
-      - Lille
-      - Toulouse
+      - Donnez moi la liste des allergènes
+      - Quel sont les allergènes ?
+      
 
-  - lookup: nuits
+  - intent: lien_vers_carte
     examples: |
-      - une nuit
-      - deux nuits
-      - trois nuits
-      - 5 nuits
-      - Je vais rester 3 nuits
-      - Juste cette nuit
-
-  - lookup: date
-    examples: |
-      - le 17/12/2024
-      - 17/04/24
-      - 03/02
-      - à partir du 1/03
+      - Où peut-on voir la carte ?
+      - Donnez-moi le lien vers la carte
