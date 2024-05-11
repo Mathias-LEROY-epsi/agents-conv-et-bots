@@ -1,33 +1,92 @@
 version: "3.1"
-
 stories:
 
-  - story: Nouvelle réservation
+  - story: story complete reservation
     steps:
-      - intent: demande_reservation
-      - action: action_nouvelle_reservation
+      - intent: greet
+      - action: utter_greet
+      - action: utter_all_options
+      - intent: tell_reservation
+      - action: utter_ask_date
+      - intent: tell_date
+        entities:
+          - date: soir
+      - slot_was_set:
+          - date: soir
+      - action: action_save_date
+      - slot_was_set:
+          - date_convertie: '2024-05-14'
+      - action: utter_ask_people
+      - intent: tell_people
+        entities:
+          - people: '3'
+      - slot_was_set:
+          - people: '3'
+      - action: action_save_people
+      - action: action_confirm_reservation
+      - intent: goodbye
+      - action: utter_goodbye
 
-  - story: Annuler réservation
+  - story: story retrieve reservation success
     steps:
-      - intent: annuler_reservation
-      - action: action_annuler_reservation
+      - intent: greet
+      - action: utter_greet
+      - action: utter_all_options
+      - intent: tell_informations_reservations
+      - action: utter_code
+      - intent: tell_code
+        entities:
+          - code: '429'
+      - slot_was_set:
+          - code: '429'
+      - action: action_retrieve_reservation
+      - intent: goodbye
+      - action: utter_goodbye
 
-  - story: Info réservation
+  - story: Story retrieve wrong reservation
     steps:
-      - intent: details_reservation
-      - action: action_informations_reservation
+      - intent: greet
+      - action: utter_greet
+      - action: utter_all_options
+      - intent: tell_informations_reservations
+      - action: utter_code
+      - intent: tell_code
+        entities:
+          - code: '478'
+      - slot_was_set:
+          - code: '478'
+      - action: action_retrieve_reservation
+      - action: action_back
 
-  - story: Menu du jour
+  - story: story get allergen
     steps:
-      - intent: menu_du_jour
-      - action: action_menu_du_jour
+      - intent: greet
+      - action: utter_greet
+      - action: utter_all_options
+      - intent: tell_informations_reservations
+      - intent: tell_allergen
+      - action: action_allergens
+      - intent: goodbye
+      - action: utter_goodbye
 
-  - story: Liste des allergènes
+  - story: story get daily menu
     steps:
-      - intent: liste_allergenes
-      - action: action_liste_allergenes
+      - intent: greet
+      - action: utter_greet
+      - action: utter_all_options
+      - intent: tell_allergen
+      - intent: tell_daily_menu
+      - action: action_daily_menu
+      - intent: goodbye
+      - action: utter_goodbye
 
-  - story: Lien vers la carte
+  - story: story get whole menu
     steps:
-      - intent: lien_vers_carte
-      - action: action_lien_vers_la_carte
+      - intent: greet
+      - action: utter_greet
+      - action: utter_all_options
+      - intent: tell_allergen
+      - intent: tell_whole_menu
+      - action: action_menu
+      - intent: goodbye
+      - action: utter_goodbye

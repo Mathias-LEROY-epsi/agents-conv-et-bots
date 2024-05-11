@@ -2,18 +2,7 @@ version: "3.1"
 
 rules:
 
-  - rule: Dire au revoir à chaque fois que l'utilisateur dit au revoir
+  - rule: Say goodbye anytime the user says goodbye
     steps:
-      - intent: au_revoir
-      - action: utter_au_revoir
-
-  - rule: Saluer l'utilisateur
-    steps:
-      - intent: salutation
-      - action: utter_salutation
-      - action: utter_liste_choix
-
-  - rule: utter_confirm_reservation est correct -> on enregistre la réservation
-    steps:
-      - intent: confirmer
-      - action: utter_enregistrement_reservation
+      - intent: goodbye
+      - action: utter_goodbye

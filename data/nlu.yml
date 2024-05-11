@@ -1,59 +1,294 @@
 version: "3.1"
-
 nlu:
-  - intent: salutation
+  - intent: tell_reservation
     examples: |
-      - salut
-      - bonjour
-      - coucou
-      - bonsoir
-      - bon après-midi
+      - Nouvelle Reservation
+      - Nouvelle resa
+      - Je voudrais faire une nouvelle réservation
+      - Je souhaite réserver une nouvelle table
+      - Nouvelle réservation, s'il te plaît
+      - Peux-tu prendre une nouvelle réservation pour moi ?
+      - J'aimerais faire une nouvelle réservation
+      - Réservation pour une nouvelle table
+      - Je souhaite réserver pour une nouvelle occasion
+      - Je voudrais réserver une nouvelle table
+      - Peux-tu organiser une nouvelle réservation ?
+      - Réservation pour un nouvel événement
+      - Je voudrais réserver une nouvelle table, s'il te plaît
+      - Nouvelle réservation à effectuer
+      - J'aimerais organiser une nouvelle réservation
+      - Peux-tu créer une nouvelle réservation pour moi ?
+      - Je souhaite faire une nouvelle réservation, s'il te plaît
+      - Réservation pour un nouveau groupe
+      - Nouvelle réservation à faire
+      - Je voudrais organiser une nouvelle réservation, merci
+      - Peux-tu prendre une nouvelle réservation ?
+      - J'aimerais réserver pour une nouvelle occasion
+      - Réservation pour une nouvelle table, merci
+      - Je souhaite réserver une nouvelle table pour ce soir
+      - Peux-tu créer une nouvelle réservation ?
+      - Nouvelle réservation à organiser
+      - Je voudrais réserver une nouvelle table, merci
+      - Réservation pour un nouvel événement, s'il te plaît
+      - Nouvelle réservation pour ce soir
+      - J'aimerais organiser une nouvelle réservation, s'il te plaît
+      - Peux-tu créer une nouvelle réservation pour ce soir ?
+      - Nouvelle réservation à prendre
 
-  - intent: au_revoir
+  - intent: tell_informations_reservations
     examples: |
-      - à plus
-      - au revoir
-      - à plus tard
-      - bonne nuit
-      - bonne journée
-      - à la prochaine
+      - Je souhaite des informations sur ma réservation
+      - Infos sur ma reservations
+      - Infos resa
+      - Je voudrais des informations sur ma reservation
+      - Je voudrais connaître les détails de ma réservation
+      - Informations concernant ma réservation
+      - J'aimerais obtenir des détails sur ma réservation
+      - Peux-tu me renseigner sur ma réservation ?
+      - Besoin d'infos sur ma réservation
+      - J'aimerais obtenir des informations concernant ma réservation
+      - Informations sur ma réservation
+      - Je souhaite obtenir des détails sur ma réservation
+      - J'aurais besoin de quelques informations sur ma réservation
+      - Pourrais-tu me donner des infos sur ma réservation ?
+      - Je voudrais savoir plus sur ma réservation
+      - Informations concernant ma réservation, s'il te plaît
+      - Pourrais-tu me donner des détails sur ma réservation ?
+      - Je veux des détails sur ma réservation
+      - J'aimerais connaître les détails de ma réservation
+      - Peux-tu me fournir des informations sur ma réservation ?
+      - Je souhaiterais avoir des détails sur ma réservation
+      - Besoin d'informations sur ma réservation
+      - Informations sur ma réservation, s'il te plaît
+      - Pourrais-tu me donner des renseignements sur ma réservation ?
+      - Je voudrais des informations sur ma réservation, s'il te plaît
+      - Peux-tu me dire quelque chose à propos de ma réservation ?
+      - J'ai besoin d'informations sur ma réservation
+      - Pourrais-tu me donner des détails concernant ma réservation ?
+      - Je voudrais des informations sur ma réservation, merci
+      - Informations sur ma réservation, s'il te plaît
+      - J'aimerais obtenir des informations sur ma réservation, s'il te plaît
+      - Pourrais-tu me donner des détails sur ma réservation, s'il te plaît ?
+      - Je souhaite des informations concernant ma réservation, s'il te plaît
 
-  - intent: confirmer
+  - intent: tell_date
     examples: |
-      - oui
-      - oui, c'est cela
-      - en effet
-      - bien sûr
-      - ça semble bien
-      - correct
+      - Ce [soir](date)
+      - [Demain](date)
+      - Ce [matin](date)
+      - [Après-demain](date)
+      - [Hier](date) soir
+      - [La semaine prochaine](date)
+      - [Ce week-end](date)
+      - [Dans deux jours](date)
+      - [Le mois prochain](date)
+      - [Aujourd'hui](date)
+      - [Dans trois jours](date)
+      - [L'année prochaine](date)
+      - [Le mois dernier](date)
+      - [Dans une semaine](date)
+      - [Dans quatre jours](date)
+      - [Demain soir](date)
+      - [Le weekend dernier](date)
+      - [Dans cinq jours](date)
+      - [Dans six jours](date)
+      - [Le mois passé](date)
+      - [Dans une heure](date)
+      - [Dans deux semaines](date)
+      - [La semaine dernière](date)
+      - [Dans sept jours](date)
+      - [Dans trois semaines](date)
+      - [Dans huit jours](date)
+      - [Dans un mois](date)
+      - [Dans neuf jours](date)
+      - [Dans deux mois](date)
+      - [Dans dix jours](date)
 
-  - intent: demande_reservation
+  - intent: tell_people
     examples: |
-      - J'aimerais faire une réservation
-      - Je souhaite réserver une table
+      - Pour [10](people) personnes
+      - Nous serons [5](people)
+      - Pour [4](people) personnes
+      - Pour [5](people) personnes
+      - Nous serons [3](people) personnes
+      - Pour [6](people) convives
+      - Nous serons [7](people) personnes
+      - Pour [8](people) participants
+      - Pour [9](people) personnes présentes
+      - Nous serons [11](people) à table
+      - Pour [12](people) invités
+      - Nous serons [13](people) convives
+      - Pour [14](people) personnes présentes
+      - Nous serons [15](people) à dîner
+      - Pour [16](people) participants
+      - Nous serons [17](people) présents
+      - Pour [18](people) convives
+      - Nous serons [19](people) à table
+      - Pour [20](people) invités
+      - Nous serons [21](people) convives
+      - Pour [22](people) personnes présentes
+      - Nous serons [23](people) participants
+      - Pour [24](people) invités
+      - Nous serons [25](people) à dîner
+      - Pour [26](people) convives
+      - Nous serons [27](people) à table
+      - Pour [28](people) participants
+      - Nous serons [29](people) présents
+      - Pour [30](people) à dîner
+      - Nous serons [31](people) à table
+      - Pour [32](people) convives
+      - Nous serons [33](people) personnes présentes
+      - Pour [34](people) participants
+      - Nous serons [35](people) invités
+      - Pour [36](people) convives
 
-  - intent: annuler_reservation
+  - intent: tell_code
     examples: |
-      - J'aimerais annuler une réservation
-      - Je veux annuler
+      - Mon code est [869](code)
+      - [120](code)
+      - Voici [758](code)
+      - C'est le [541](code)
+      - [568](code)
+      - [789](code)
+      - [463](code)
+      - [205](code)
+      - [198](code)
+      - [678](code)
+      - Mon code est le [429](code)
+      - Mon code est [123](code)
+      - [456](code)
+      - Voici [789](code)
+      - C'est le [012](code)
+      - [345](code)
+      - [678](code)
+      - [901](code)
+      - [234](code)
+      - [567](code)
+      - [890](code)
+      - Mon code est le [111](code)
+      - [222](code)
+      - [333](code)
+      - Voici [444](code)
+      - C'est le [555](code)
+      - [666](code)
+      - [777](code)
+      - [888](code)
+      - [999](code)
+      - [000](code)
+      - Mon code est [654](code)
+      - [321](code)
+      - Voici [987](code)
+      - C'est le [555](code)
+      - [246](code)
 
-  - intent: details_reservation
+  - intent: greet
     examples: |
-      - J'aimerais avoir le détail d'une réservation
-      - Comment fait-on pour voir les informations d'une réservation
+      - Bonjour
+      - Hello
+      - Salut
+  - intent: goodbye
+    examples: |
+      - GoodBye
+      - Au revoir
+      - Ciao
+      - Merci, au revoir
+      - Merci c'est tout bon, au revoir
+      - Super, au revoir
+      - Merci beaucoup
+  - intent: tell_suppression
+    examples: |
+      - Supprimer
+      - Supprimer ma réservation
+      - Suppression
+      - Je souhaite annuler ma réservation.
+      - J'aimerais annuler mon rendez-vous.
+      - Supprime ma réservation, s'il te plaît.
+      - Je veux annuler mon inscription.
+      - Peux-tu annuler ma réservation ?
+      - Je souhaite supprimer ma réservation.
+      - Annule mon rendez-vous.
+      - Supprime ma réservation de la liste, s'il te plaît.
+      - J'aimerais annuler mon engagement.
+      - Peux-tu retirer mon nom de la liste, s'il te plaît ?
+      - Supprime ma réservation de la liste.
+      - Je souhaite annuler ma participation.
+      - Je veux retirer mon nom de la liste.
+      - Annule ma réservation, s'il te plaît.
+      - Supprime ma réservation de ton système.
+      - Retire mon nom de la liste, s'il te plaît.
+      - J'aimerais annuler ma réservation.
+      - Peux-tu annuler mon rendez-vous ?
+      - Je souhaite supprimer mon inscription.
 
-  - intent: menu_du_jour
+  - intent: tell_allergen
     examples: |
-      - Pouvez-vous me donner le menu du jour
-      - Où peut-on voir le menu ?
+      - Je voudrais voir la liste des allergenes
+      - Liste allergenes
+      - Je voudrais voir les allergenes
+      - Quels sont les allergenes
+      - Peux-tu me montrer la liste complète des allergènes ?
+      - J'aimerais savoir quels sont les allergènes présents dans les plats proposés.
+      - Affiche-moi la liste des allergènes, s'il te plaît.
+      - Je souhaite consulter la liste des allergènes, est-ce possible ?
+      - Quels allergènes dois-je prendre en compte dans les plats ?
+      - Aurais-tu la gentillesse de me fournir la liste des allergènes ?
+      - Est-ce que je pourrais voir les allergènes présents dans les plats ?
+      - Montre-moi les allergènes, s'il te plaît.
+      - Je voudrais connaître la liste complète des allergènes.
+      - Peux-tu me dire quels sont les allergènes auxquels je devrais faire attention ?
+      - J'aimerais voir les allergènes inclus dans les plats. Peux-tu m'aider ?
+      - Pourrais-tu m'indiquer quels sont les allergènes présents dans les plats ?
+      - Affiche-moi les allergènes à prendre en compte, s'il te plaît.
+      - Je suis intéressé par la liste des allergènes. Où puis-je la trouver ?
+      - Quels allergènes sont présents dans les plats ? Peux-tu me le montrer ?
+      - Je voudrais consulter la liste des allergènes. Où puis-je la trouver ?
+      - Peux-tu me montrer quels sont les allergènes à éviter dans les plats ?
+      - Affiche-moi les allergènes présents dans les plats, s'il te plaît.
+      - Je souhaite vérifier la liste des allergènes. Où puis-je la trouver ?
 
-  - intent: liste_allergenes
+  - intent: tell_daily_menu
     examples: |
-      - Donnez moi la liste des allergènes
-      - Quel sont les allergènes ?
-      
-
-  - intent: lien_vers_carte
+      - Montrer moi la carte du jour
+      - Quel est le menu du jour
+      - Quelle est la carte du jour
+      - Qu'est-ce qui est au menu aujourd'hui
+      - Affiche-moi les plats disponibles aujourd'hui
+      - Y a-t-il des spéciaux pour aujourd'hui ?
+      - Peux-tu me dire ce qui est proposé au menu pour aujourd'hui ?
+      - Quels plats sont disponibles aujourd'hui ?
+      - Aurais-tu la gentillesse de me montrer ce qu'il y a au menu aujourd'hui ?
+      - Quels sont les plats du jour ?
+      - Peux-tu me donner un aperçu des plats disponibles actuellement ?
+      - Je suis curieux de connaître les options de repas pour aujourd'hui.
+      - Quels plats puis-je choisir pour le déjeuner/le dîner aujourd'hui ?
+      - Pourrais-tu me dire ce qu'il y a à manger aujourd'hui ?
+      - J'aimerais savoir quels sont les choix pour le repas d'aujourd'hui.
+      - Pourrais-tu m'indiquer quels plats sont servis pour le déjeuner/le dîner ?
+      - Je voudrais voir le menu pour aujourd'hui, s'il te plaît.
+      - Quels sont les plats du jour disponibles ?
+      - Je souhaite consulter le menu du jour, est-ce possible ?
+      - Montre-moi les options de menu actuelles.
+      - Quels plats sont à l'affiche aujourd'hui ?
+      - J'aimerais connaître les choix de plats pour aujourd'hui.
+  - intent: tell_whole_menu
     examples: |
-      - Où peut-on voir la carte ?
-      - Donnez-moi le lien vers la carte
+      - Je voudrais le lien vers la carte
+      - Je voudrais consulter l'intégralité de la carte, s'il te plaît.
+      - Est-ce que je pourrais voir l'ensemble des plats proposés ?
+      - Pourrais-tu me donner accès à la carte complète ?
+      - J'aimerais avoir le lien vers tous les plats disponibles.
+      - Affiche-moi la carte dans son ensemble.
+      - Peux-tu me montrer tous les plats qui sont au menu ?
+      - Je souhaite consulter la carte complète, est-ce possible ?
+      - Pourrais-tu m'indiquer où je peux trouver la liste complète des plats ?
+      - Aurais-tu la gentillesse de me fournir le lien vers la carte des repas ?
+      - J'aimerais voir tous les plats disponibles, s'il te plaît.
+      - Je voudrais connaître tous les plats proposés. Peux-tu m'aider ?
+      - Montre-moi la carte complète des repas, s'il te plaît.
+      - Est-ce que je pourrais avoir accès à la liste complète des plats ?
+      - Je suis intéressé par tous les plats proposés. Où puis-je les trouver ?
+      - Affiche-moi la liste complète des plats, s'il te plaît.
+      - Peux-tu me montrer tous les plats qui sont au menu aujourd'hui ?
+      - J'aimerais consulter la carte complète des repas.
+      - Je souhaite voir tous les plats disponibles sur la carte.
+      - Est-ce que je pourrais avoir la liste de tous les plats proposés ?
