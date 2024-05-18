@@ -12,3 +12,14 @@ Pour chaque exercice, je vais créer une branche spécifique.
 - Faire fonctionner un bot qui répond a des demandes de réservations d’hôtel ou a la commande d’un repas en ligne.
 - Préparer le scénario
 - Mettre en place le scénario
+
+## Exercice Final
+- avoir un bot qui permet de faire des réservations dans un restaurant
+- pouvoir réserver, modifier et supprimer une réservation
+- demander le menu du jour
+- avoir la liste des allergènes
+
+### Mise en place
+- faire `rasa train` pour entrainer le model
+- faire la commande `rasa run actions` pour lancer le serveur avec les actions
+- faire `rasa shell` dans un autre terminal pour lancer le bot
