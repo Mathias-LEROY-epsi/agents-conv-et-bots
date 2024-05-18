@@ -23,3 +23,4 @@ Pour chaque exercice, je vais créer une branche spécifique.
 - faire `rasa train` pour entrainer le model
 - faire la commande `rasa run actions` pour lancer le serveur avec les actions
 - faire `rasa shell` dans un autre terminal pour lancer le bot
+- il est possible que certaines fois le bot n'arrive pas à sortir d'une story, il faut alors relancer le bot et faire le chemin souhaité

@@ -3,90 +3,88 @@ stories:
 
   - story: story complete reservation
     steps:
-      - intent: greet
-      - action: utter_greet
-      - action: utter_all_options
-      - intent: tell_reservation
-      - action: utter_ask_date
-      - intent: tell_date
+      - intent: saluer
+      - action: utter_saluer
+      - action: utter_toutes_options
+      - intent: indiquer_reservation
+      - action: utter_demander_date
+      - intent: indiquer_date
         entities:
           - date: soir
       - slot_was_set:
           - date: soir
-      - action: action_save_date
+      - action: action_sauvegarder_date
       - slot_was_set:
           - date_convertie: '2024-05-14'
-      - action: utter_ask_people
-      - intent: tell_people
+      - action: utter_demander_personnes
+      - intent: indiquer_personnes
         entities:
-          - people: '3'
+          - personnes: '3'
       - slot_was_set:
-          - people: '3'
-      - action: action_save_people
-      - action: action_confirm_reservation
-      - intent: goodbye
-      - action: utter_goodbye
+          - personnes: '3'
+      - action: action_sauvegarder_personnes
+      - action: action_confirmer_reservation
+      - intent: au_revoir
+      - action: utter_au_revoir
 
-  - story: story retrieve reservation success
+  - story: story récupérer réservation
     steps:
-      - intent: greet
-      - action: utter_greet
-      - action: utter_all_options
-      - intent: tell_informations_reservations
+      - intent: saluer
+      - action: utter_saluer
+      - action: utter_toutes_options
+      - intent: indiquer_informations_reservations
       - action: utter_code
-      - intent: tell_code
+      - intent: indiquer_code
         entities:
           - code: '429'
       - slot_was_set:
           - code: '429'
-      - action: action_retrieve_reservation
-      - intent: goodbye
-      - action: utter_goodbye
+      - action: action_recuperer_reservation
+      - intent: au_revoir
+      - action: utter_au_revoir
 
-  - story: Story retrieve wrong reservation
+  - story: story supprimer réservation
     steps:
-      - intent: greet
-      - action: utter_greet
-      - action: utter_all_options
-      - intent: tell_informations_reservations
+      - intent: saluer
+      - action: utter_saluer
+      - action: utter_toutes_options
+      - intent: indiquer_suppression
       - action: utter_code
-      - intent: tell_code
+      - intent: indiquer_code
         entities:
-          - code: '478'
+          - code: '429'
       - slot_was_set:
-          - code: '478'
-      - action: action_retrieve_reservation
-      - action: action_back
+          - code: '429'
+      - action: action_supprimer_reservation
+      - intent: au_revoir
+      - action: utter_au_revoir
 
-  - story: story get allergen
+  - story: story récupérer liste des allergènes
     steps:
-      - intent: greet
-      - action: utter_greet
-      - action: utter_all_options
-      - intent: tell_informations_reservations
-      - intent: tell_allergen
-      - action: action_allergens
-      - intent: goodbye
-      - action: utter_goodbye
+      - intent: saluer
+      - action: utter_saluer
+      - action: utter_toutes_options
+      - intent: indiquer_allergene
+      - action: action_allergenes
+      - intent: au_revoir
+      - action: utter_au_revoir
 
-  - story: story get daily menu
+  - story: story menu du jour
     steps:
-      - intent: greet
-      - action: utter_greet
-      - action: utter_all_options
-      - intent: tell_allergen
-      - intent: tell_daily_menu
-      - action: action_daily_menu
-      - intent: goodbye
-      - action: utter_goodbye
+      - intent: saluer
+      - action: utter_saluer
+      - action: utter_toutes_options
+      - intent: indiquer_menu_jour
+      - action: action_menu_jour
+      - intent: au_revoir
+      - action: utter_au_revoir
 
-  - story: story get whole menu
+  - story: story menu complet
     steps:
-      - intent: greet
-      - action: utter_greet
-      - action: utter_all_options
-      - intent: tell_allergen
-      - intent: tell_whole_menu
-      - action: action_menu
-      - intent: goodbye
-      - action: utter_goodbye
+      - intent: saluer
+      - action: utter_saluer
+      - action: utter_toutes_options
+      - intent: indiquer_menu_complet
+      - action: action_menu_complet
+      - intent: au_revoir
+      - action: utter_au_revoir

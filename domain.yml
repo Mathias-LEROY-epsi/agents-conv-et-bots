@@ -1,56 +1,52 @@
 version: '3.1'
 
 actions:
-  - action_save_date
-  - action_save_people
-  - action_retrieve_reservation
-  - action_daily_menu
-  - action_allergens
-  - action_menu
-  - action_confirm_reservation
-  - action_delete_reservation
+  - action_sauvegarder_date
+  - action_sauvegarder_personnes
+  - action_recuperer_reservation
+  - action_menu_jour
+  - action_allergenes
+  - action_menu_complet
+  - action_confirmer_reservation
+  - action_supprimer_reservation
 
 intents:
-  - goodbye
-  - greet
-  - tell_city
-  - tell_date
-  - tell_people
-  - tell_reservation
-  - tell_code
-  - tell_informations_reservations
-  - tell_suppression
-  - tell_allergen
-  - tell_daily_menu
-  - tell_whole_menu
+  - au_revoir
+  - saluer
+  - indiquer_date
+  - indiquer_personnes
+  - indiquer_reservation
+  - indiquer_code
+  - indiquer_informations_reservations
+  - indiquer_suppression
+  - indiquer_allergene
+  - indiquer_menu_jour
+  - indiquer_menu_complet
 
 responses:
 
-  utter_greet:
-    - text: Bonjour, je suis un ChatBot de reservation pour restaurant.
+  utter_saluer:
+    - text: "Bonjour, je suis un ChatBot de réservation pour restaurant."
 
-  utter_all_options:
-    - text: "Que souhaitez-vous : \n - Nouvelle Reservation \n - Infos sur resa \n - Menu du jour \n - Liste Allergene \n - Lien vers la carte"
+  utter_toutes_options:
+    - text: "Que souhaitez-vous : \n - Nouvelle réservation \n - Infos sur réservation \n - Supprimer une réservation \n - Menu du jour \n - Liste allergènes \n - Lien vers la carte"
 
-  utter_goodbye:
-    - text: Bye
+  utter_au_revoir:
+    - text: "Au revoir"
 
-  utter_ask_date:
-    - text: "Pour quand souhaitez-vous reserver : \n - Ce soir \n - Demain"
+  utter_demander_date:
+    - text: "Pour quand souhaitez-vous réserver : \n - Ce soir \n - Demain"
 
-  utter_ask_people:
-    - text: "Pour combien de personnes souhaitez-vous reserver ?"
+  utter_demander_personnes:
+    - text: "Pour combien de personnes souhaitez-vous réserver ?"
 
   utter_code:
-    - text: "Veuillez me transmettre votre code de réservation s'il vous plait"
+    - text: "Veuillez me transmettre votre code de réservation, s'il vous plaît"
 
-  utter_retrieve_options:
-    - text: "Voulez-vous modifier ou supprimer votre réservation ?"
 entities:
-  - people
+  - personnes
   - date
   - code
-
 
 slots:
   date_convertie:
@@ -64,18 +60,16 @@ slots:
       - type: from_entity
         entity: code
 
-  people:
+  personnes:
     type: text
     mappings:
       - type: from_entity
-        entity: people
+        entity: personnes
   date:
     type: text
     mappings:
       - type: from_entity
         entity: date
-
-
 
 session_config:
   session_expiration_time: 60

@@ -1,6 +1,6 @@
 version: "3.1"
 nlu:
-  - intent: tell_reservation
+  - intent: indiquer_reservation
     examples: |
       - Nouvelle Reservation
       - Nouvelle resa
@@ -35,7 +35,7 @@ nlu:
       - Peux-tu créer une nouvelle réservation pour ce soir ?
       - Nouvelle réservation à prendre
 
-  - intent: tell_informations_reservations
+  - intent: indiquer_informations_reservations
     examples: |
       - Je souhaite des informations sur ma réservation
       - Infos sur ma reservations
@@ -47,7 +47,7 @@ nlu:
       - Peux-tu me renseigner sur ma réservation ?
       - Besoin d'infos sur ma réservation
       - J'aimerais obtenir des informations concernant ma réservation
-      - Informations sur ma réservation
+      - Inf J'aimerais connaître les détails de ma réservationormations sur ma réservation
       - Je souhaite obtenir des détails sur ma réservation
       - J'aurais besoin de quelques informations sur ma réservation
       - Pourrais-tu me donner des infos sur ma réservation ?
@@ -55,7 +55,6 @@ nlu:
       - Informations concernant ma réservation, s'il te plaît
       - Pourrais-tu me donner des détails sur ma réservation ?
       - Je veux des détails sur ma réservation
-      - J'aimerais connaître les détails de ma réservation
       - Peux-tu me fournir des informations sur ma réservation ?
       - Je souhaiterais avoir des détails sur ma réservation
       - Besoin d'informations sur ma réservation
@@ -71,13 +70,12 @@ nlu:
       - Pourrais-tu me donner des détails sur ma réservation, s'il te plaît ?
       - Je souhaite des informations concernant ma réservation, s'il te plaît
 
-  - intent: tell_date
+  - intent: indiquer_date
     examples: |
       - Ce [soir](date)
       - [Demain](date)
       - Ce [matin](date)
       - [Après-demain](date)
-      - [Hier](date) soir
       - [La semaine prochaine](date)
       - [Ce week-end](date)
       - [Dans deux jours](date)
@@ -104,45 +102,45 @@ nlu:
       - [Dans deux mois](date)
       - [Dans dix jours](date)
 
-  - intent: tell_people
+  - intent: indiquer_personnes
     examples: |
-      - Pour [10](people) personnes
-      - Nous serons [5](people)
-      - Pour [4](people) personnes
-      - Pour [5](people) personnes
-      - Nous serons [3](people) personnes
-      - Pour [6](people) convives
-      - Nous serons [7](people) personnes
-      - Pour [8](people) participants
-      - Pour [9](people) personnes présentes
-      - Nous serons [11](people) à table
-      - Pour [12](people) invités
-      - Nous serons [13](people) convives
-      - Pour [14](people) personnes présentes
-      - Nous serons [15](people) à dîner
-      - Pour [16](people) participants
-      - Nous serons [17](people) présents
-      - Pour [18](people) convives
-      - Nous serons [19](people) à table
-      - Pour [20](people) invités
-      - Nous serons [21](people) convives
-      - Pour [22](people) personnes présentes
-      - Nous serons [23](people) participants
-      - Pour [24](people) invités
-      - Nous serons [25](people) à dîner
-      - Pour [26](people) convives
-      - Nous serons [27](people) à table
-      - Pour [28](people) participants
-      - Nous serons [29](people) présents
-      - Pour [30](people) à dîner
-      - Nous serons [31](people) à table
-      - Pour [32](people) convives
-      - Nous serons [33](people) personnes présentes
-      - Pour [34](people) participants
-      - Nous serons [35](people) invités
-      - Pour [36](people) convives
+      - Pour [10](personnes) personnes
+      - Nous serons [5](personnes)
+      - Pour [4](personnes) personnes
+      - Pour [5](personnes) personnes
+      - Nous serons [3](personnes) personnes
+      - Pour [6](personnes) convives
+      - Nous serons [7](personnes) personnes
+      - Pour [8](personnes) participants
+      - Pour [9](personnes) personnes présentes
+      - Nous serons [11](personnes) à table
+      - Pour [12](personnes) invités
+      - Nous serons [13](personnes) convives
+      - Pour [14](personnes) personnes présentes
+      - Nous serons [15](personnes) à dîner
+      - Pour [16](personnes) participants
+      - Nous serons [17](personnes) présents
+      - Pour [18](personnes) convives
+      - Nous serons [19](personnes) à table
+      - Pour [20](personnes) invités
+      - Nous serons [21](personnes) convives
+      - Pour [22](personnes) personnes présentes
+      - Nous serons [23](personnes) participants
+      - Pour [24](personnes) invités
+      - Nous serons [25](personnes) à dîner
+      - Pour [26](personnes) convives
+      - Nous serons [27](personnes) à table
+      - Pour [28](personnes) participants
+      - Nous serons [29](personnes) présents
+      - Pour [30](personnes) à dîner
+      - Nous serons [31](personnes) à table
+      - Pour [32](personnes) convives
+      - Nous serons [33](personnes) personnes présentes
+      - Pour [34](personnes) participants
+      - Nous serons [35](personnes) invités
+      - Pour [36](personnes) convives
 
-  - intent: tell_code
+  - intent: indiquer_code
     examples: |
       - Mon code est [869](code)
       - [120](code)
@@ -181,21 +179,21 @@ nlu:
       - C'est le [555](code)
       - [246](code)
 
-  - intent: greet
+  - intent: saluer
     examples: |
       - Bonjour
       - Hello
       - Salut
-  - intent: goodbye
+
+  - intent: au_revoir
     examples: |
-      - GoodBye
       - Au revoir
-      - Ciao
       - Merci, au revoir
       - Merci c'est tout bon, au revoir
       - Super, au revoir
       - Merci beaucoup
-  - intent: tell_suppression
+
+  - intent: indiquer_suppression
     examples: |
       - Supprimer
       - Supprimer ma réservation
@@ -220,7 +218,7 @@ nlu:
       - Peux-tu annuler mon rendez-vous ?
       - Je souhaite supprimer mon inscription.
 
-  - intent: tell_allergen
+  - intent: indiquer_allergene
     examples: |
       - Je voudrais voir la liste des allergenes
       - Liste allergenes
@@ -246,7 +244,7 @@ nlu:
       - Affiche-moi les allergènes présents dans les plats, s'il te plaît.
       - Je souhaite vérifier la liste des allergènes. Où puis-je la trouver ?
 
-  - intent: tell_daily_menu
+  - intent: indiquer_menu_jour
     examples: |
       - Montrer moi la carte du jour
       - Quel est le menu du jour
@@ -270,7 +268,8 @@ nlu:
       - Montre-moi les options de menu actuelles.
       - Quels plats sont à l'affiche aujourd'hui ?
       - J'aimerais connaître les choix de plats pour aujourd'hui.
-  - intent: tell_whole_menu
+
+  - intent: indiquer_menu_complet
     examples: |
       - Je voudrais le lien vers la carte
       - Je voudrais consulter l'intégralité de la carte, s'il te plaît.

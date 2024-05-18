@@ -1,8 +1,22 @@
 version: "3.1"
 
 rules:
-
-  - rule: Say goodbye anytime the user says goodbye
+  - rule: Dire au revoir chaque fois que l'utilisateur dit au revoir
     steps:
-      - intent: goodbye
-      - action: utter_goodbye
+      - intent: au_revoir
+      - action: utter_au_revoir
+
+  - rule: Afficher les allergènes
+    steps:
+      - intent: indiquer_allergene
+      - action: action_allergenes
+
+  - rule: Afficher le menu du jour
+    steps:
+      - intent: indiquer_menu_jour
+      - action: action_menu_jour
+
+  - rule: Afficher l'ensemble du menu
+    steps:
+      - intent: indiquer_menu_complet
+      - action: action_menu_complet
